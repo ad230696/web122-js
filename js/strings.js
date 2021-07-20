@@ -60,10 +60,9 @@ const b = 18;
 console.log(`His name is ${name} and his age is ${a + b}`); // данный пример работает только с ` `
 
 
-Задача 
-написать функтию, которая будет переворачивать строку задом напирет.
 
-1) Переворачивание строки с помощью встроених функтий 
+
+1) Переворачивание строки с помощью встроеных функтий 
 
 const reverseString = str => {
     let splitString = str.split(""); //  разбиваем строку на массив
@@ -97,7 +96,17 @@ console.log(reverseString("hello"));
 
 
 3) Переворот строки спомощью рекурсии 
+    substr() - возвращает символы с указоного места
+    charArt() - возвращает указаный символ из строки 
+    
+const reverseString = str => {
+    if (str === "") { // точка остановы
+        return "" ;
+    } else {
+        return reverseString(str.substr(1)) + str.charAt(0);
+    }
+}
 
+console.log(reverseString("hello"));
 
 */
-

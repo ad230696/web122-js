@@ -50,7 +50,7 @@ const myPrinter = createPrinter();
 myPrinter();
 
 
-Функтия предикат 
+Функтия предикат // начинать с is (является), has(имеет), can(может)
 
 const isRightNum = (num) => {
     const res =(num > 3) && (num ** 2 < 26) && (num !== 5);
@@ -59,7 +59,7 @@ const isRightNum = (num) => {
 
 console.log(isRightNum(4)); // true
 
-Задача 
+Задача  
 
 "Счастливым" называют билет с номером, в котором сумма первой половины цифр равна сумме второй половины цифр. Номера могут быть произвольной длины, с единственным условием, что количество цифр всегда чётно, например: `33` или `2341` и так далее.
  Билет с номером **385916** — счастливый, так как 3 + 8 + 5 = 9 + 1 + 6. 
@@ -88,16 +88,16 @@ isHappyTicket('1222'); // false
 
 // console.log(isHappyTicket('385916'));
 
-const isHappyTicket = num => {
-    const ns = String(num);
-    if (ns.length != 6) return false;
-    const sum = (s) => {
-        if (s.length === 1) return s;
-        return Number(s.substr(0, 1)) + Number(sum(s.substr(1, s.length - 1)));
-    };
-    const left = ns.substr(0, 3);
-    const right = ns.substr(3, 3);
-    return sum(left) === sum(right) ? true : false;
-};
-console.log(isHappyTicket('385916'));
-console.log(isHappyTicket('222'));
+// const isHappyTicket = num => {
+//     const ns = String(num);
+//     if (ns.length != 6) return false;
+//     const sum = (s) => {
+//         if (s.length === 1) return s;
+//         return Number(s.substr(0, 1)) + Number(sum(s.substr(1, s.length - 1)));
+//     };
+//     const left = ns.substr(0, 3);
+//     const right = ns.substr(3, 3);
+//     return sum(left) === sum(right) ? true : false;
+// };
+// console.log(isHappyTicket('385916'));
+// console.log(isHappyTicket('222'));

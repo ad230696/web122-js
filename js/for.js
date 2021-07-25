@@ -124,4 +124,3 @@ const absoluteNumber = (num) => {
 // }
 
 // console.log(simplNum(5));
-

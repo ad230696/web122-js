@@ -89,3 +89,44 @@ const squareOfSum = function (a, b) {
 }
 
 */
+
+// const names = ['john', 'smith', 'karl', 'asd']; 
+// // reverse(); // ['karl', 'smith', 'john'];
+// const reverse = coll => {
+//     const lastIndex = coll.length - 1;
+//     const middleIndex = lastIndex / 2;
+//     for (let i = 0; i < middleIndex; i += 1) {
+//         const mirrorIndex = lastIndex - i;
+//         const temp = coll[i];
+//         coll[i] = coll[mirrorIndex];
+//         coll[mirrorIndex] = temp;
+//     }
+// };
+// reverse(names);
+// console.log(names);
+
+
+// const names = ['john', 'smith', 'karl'];
+// console.log(names);
+// const reverse = coll => {
+//     let result = [];
+//     const index = coll.length - 1;
+//     for (i = index; i >= 0; i--) {
+//         result.push(coll[i]);
+//     }
+//     return result;
+// };
+
+// console.log(reverse(names));
+
+
+// функтия делает первую букву каждого слова
+// const solution = str => {
+//     let pieces = str.split('');
+//     for (var i = 0; i < pieces.length; i++) {
+//         var j = pieces[i].charAt(0).toUpperCase();
+//         pieces[i] = j + pieces[i].substr(1);
+//     }
+//     return pieces.join(" ");
+// }
+// console.log(solution('hello, world!'));

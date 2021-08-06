@@ -67,7 +67,7 @@ console.log(`His name is ${name} and his age is ${a + b}`); // данный пр
 const reverseString = str => {
     let splitString = str.split(""); //  разбиваем строку на массив
     let reverseArray = splitString.reverse(); // переварачиваем масcив
-    let joinArray = reverseArray.join(""); // объеденяем массив
+    let joinArray = reverseArray.join(""); // объеденяем в массив
     return joinArray;
 }
 
@@ -110,3 +110,12 @@ const reverseString = str => {
 console.log(reverseString("hello"));
 
 */
+
+const reverseString = str => {
+    let splitString = str.split(""); //  разбиваем строку на массив
+    let reverseArray = splitString.reverse(); // переварачиваем масcив
+    let joinArray = reverseArray.join(""); // объеденяем в массив
+    return joinArray;
+}
+
+console.log(reverseString("hello"));

@@ -71,7 +71,7 @@ const reverseString = str => {
     return joinArray;
 }
 
-console.log(reverseString("hello"));
+console.log(reverseString("ehllo"));
 
 Написания кода в одну строку:
 
@@ -110,12 +110,3 @@ const reverseString = str => {
 console.log(reverseString("hello"));
 
 */
-
-const reverseString = str => {
-    let splitString = str.split(""); //  разбиваем строку на массив
-    let reverseArray = splitString.reverse(); // переварачиваем масcив
-    let joinArray = reverseArray.join(""); // объеденяем в массив
-    return joinArray;
-}
-
-console.log(reverseString("hello"));

@@ -267,12 +267,4 @@ console.log(buildDefinitionList(definitions));
 1) метод split, которая разделяет строку на части.
 2)обойти массив получивщихся слов и приобразовать каждую букву слова в верхний регистр.
 3)строки в js не имеют встроенного метода для этого, по этому мы напишем его сами.
-
-
-
-const text = 'hello ilia! how are you?';
-const copitalize = text => (text.length === 0) ? text : `${text[0].toUpperCase()}${text.slice[1]}`;
-console.log(copitalize);
-console.log(text);
-
 */

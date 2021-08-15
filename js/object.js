@@ -126,7 +126,7 @@ for (const prop in course) {
     console.log('course.${prop} = ${course[prop]}');
 }
 
-for...in выводит не тольько свойства самого объекта, но и сввойства, добавленные в прототип этого объекта.
+for...in выводит не тольько свойства самого объекта, но и свойства, добавленные в прототип этого объекта.
 объекты могут быть связаны друг с другом и обращения к свойству в одном олбъекти может приводить к обращению (неявному) к свойству другова объекта (протатипа)
 
 
@@ -209,6 +209,91 @@ console.log(user);
 
 ограничения object.assign. оно выполняет поверхностное слияние. вложенные объекты не сравниваються, а заменяються.
 
+const obj1 = {a: {a: 1}};
+const obj2 = {a: {b: 1}};
+
+object.assing(obj1, obj2);
+consolelog(obj1); // {a: {b: 1}};
+
+Клонирование (копирование)
+при клонирование создаеться копия исходного объекта, т.е. новый объект, но наполненый теми же данными.
+
+
+const user = {name: 'Tirion', email: 'support@yandex.ru', age: 44};
+
+данные из user копируются во вновь созданный объект
+const copyOfUser = Object.assign({}, user);
+
+spread и создание новых объектов
+
+const user = {name: 'Tirion', email: 'support@yandex.ru', age: 44};
+const data = {name: 'Tirion2', age: 45};
+
+const copyOfUser = Object.asseign({}, user, data);
+или
+const copyOfUser = {...user}; // спред-оператор раскладывает соответствующий объект внутри нового объекта 
+
+расширение объекта 
+const user = {name: 'Vasya', age: 11,};
+const newUser = {...user, married: true, age: 25,}; // все что находиться слева от спред-оператора имеет низкий преаритет 
+
+const user2 = {name: 'Irina', surname: 'Petrova'};
+const mergetObject = {...user ...user2};
+
+console.log(megetObject); // {{name: 'Irina', age: 25, surname: 'Petrova'}
+
+const mergetObject = {...user, married: false, ...user2};
+
+console.log(megetObject); // {{name: 'Irina', age: 25, married: false, surname: 'Petrova'}
+
+
+Деструктуризация
+
+const greeting = `${user.company.name} was founded in ${user.company.createdAt}`;
+
+Чем больше вложенность тем эффективней этот способ
+const company = user.company;
+const greeting = `${company.name} was founded in ${company.createdAt}`;
+
+Деструктуризация - специальный синтаксис, позволяющий извлекать части из составных данных. Это удобный способ раскладывать объекты на части.
+
+const person = {firstname: 'Rasmus', lastname: 'Lerdorf', manager: true};
+
+const { firstname, manager } = person;
+console.log(firstname); // Rasmus
+console.log(manager); // true
+
+const manager = false; //имя занято
+const person = {firstname: 'Rasmus', lastname: 'Lerdorf', manager: true};
+
+const { manager: isManager } = person; 
+console.log(isManager); // true
+
+const person = {firstname: 'Rasmus', lastname: 'Lerdorf' };
+console.log(person.manager); // undefined
+
+const { manager = false } = person;
+
+console.log(manager);
+console.log(person);
+
+rest 
+const person = {firstname: 'Rasmus', lastname: 'Lerdorf', manager: true};
+
+const {firsname, ...rest} = person;
+console.log(rest); // { lastname: 'Lerdorf', manager: true }
+
+Задача 
+написать фунтию, которая принимает количество минуты и возвращяет строку являющуюся временем в формате часы минуты
+// если количество минут содержит больше 24 часов, то функтия возвращяет время, прошедшее с полуночи последних суток 
+myFunction(5) // 00:05
+myFunction(15) // 00:15
+myFunction(60) // 01:00
+myFunction(600) // 10:00
+
+
+
+
+
 
 */
-

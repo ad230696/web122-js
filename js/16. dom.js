@@ -48,7 +48,73 @@ const ul = document.querSelector('#menu');
 
 const spans = ul.querySelectorAll('.odd > span');
 
+метод matches -проверяет, удволетворяет ли el селектору css 
+const el = document.querySelector('p');
+console.log(el.matches('.unknown-class')); // false
+console.log(el.matches('.font-weight')); // true
 
+метод closest - ищет ближайший элемент выше по иерархии, удволетворяющий селктору. Если такой элемент найден, то возвращяется он, иначе возвращается null. 
+
+const element = document.querySelector('span');
+const ancestor = element.closest('.row');
+console.log(ancestor.id); // 'three'
+
+Манипулирование DOM дерево
+innerHTML
+
+const body = document.body;
+console.log(body);
+
+body.innerHTML = '<b>make</b> love';
+console.log(body.innerHTML);
+
+textContent 
+const body = document.body;
+document.body.textContent =  '<b>make</b> love';
+console.log(document.body.innerHTML);
+
+Создание узлов
+
+создаем текстовый узел
+const textNode = document.createTextNode('life is life');
+
+создания узла p
+const pElement = document.createElement('p');
+
+console.log(textNode);
+console.log(pElement);
+
+добовляем textNode в канец списка элемента pElement
+pElement.append(textNode);
+pElement.textContent = 'life is life';
+
+создаем дивку
+const element = document.createElement('div');
+element.append(pElement);
+console,log(element); // <div><p> life is life </p></div>
+
+управление узлами DOM
+атрибуты
+когда браузер загрузил HTML, на его основе строиться DOM.
+Во время отработки, каждый тег становиться узлом, а атрибуты свойствами этого узла.
+
+const element = document.querySelector('#aboutPage');
+console.log(element); // a#aboutPage.simple-link
+
+console.log(element.id); // aboutPage
+console.log(element.href); // /pages/about
+
+добовление/удаления класса
+const element = document.querySelector('#aboutPage); // зацепились за ссылку
+element.classList.add('page'); // добавили класс
+console.log(element);
+
+element.classList.remove('simple-link'); // удалили класс
+console.log(element);
+
+element.classList.contains('class') - проверяет, содержит ли элемент нужный класс
+
+element.classList.toggle('class') - если есть класс, удалает его и наоборот
 
 
 
